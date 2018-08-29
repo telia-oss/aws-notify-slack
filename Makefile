@@ -1,6 +1,9 @@
+TARGET ?= linux
+ARCH ?= amd64
+
 build:
 	dep ensure -v
-	env GOOS=linux go build -ldflags="-s -w" -o bin/main main.go
+	env GOOS=$(TARGET) GOARCH=$(ARCH) go build -ldflags="-s -w" -o bin/main main.go
 
 zip:
 	zip -r bin/main.zip ./*
