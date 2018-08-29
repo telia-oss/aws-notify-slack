@@ -1,8 +1,8 @@
 # AWS-Notify-Slack
 Lambda function that format and forward a AWS event to slack
 
-![alt text](https://github.com/TeliaSoneraNorge/aws-notify-slack/blob/master/media/warn.png)
-![alt text](https://github.com/TeliaSoneraNorge/aws-notify-slack/blob/master/media/ok.png)
+![alt text](https://github.com/telia-oss/aws-notify-slack/blob/master/media/warn.png)
+![alt text](https://github.com/telia-oss/aws-notify-slack/blob/master/media/ok.png)
 
 ## Run unit tests 
 $ make test
