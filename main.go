@@ -3,10 +3,10 @@ package main
 import (
 	"os"
 
-	"github.com/aws-notify-slack/slack"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/parnurzeal/gorequest"
+	"github.com/telia-oss/aws-notify-slack/slack"
 )
 
 // Handler is our lambda handler invoked by the `lambda.Start` function call
