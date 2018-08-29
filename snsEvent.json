@@ -1,0 +1,31 @@
+{
+  "Records": [
+    {
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:EXAMPLE",
+      "EventSource": "aws:sns",
+      "Sns": {
+        "SignatureVersion": "1",
+        "Timestamp": "1970-01-01T00:00:00.000Z",
+        "Signature": "EXAMPLE",
+        "SigningCertUrl": "EXAMPLE",
+        "MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
+        "Message": "{\"AlarmName\":\"sns-cloudwatch-total-cpu\",\"AlarmDescription\":null,\"AWSAccountId\":\"123456789012\",\"NewStateValue\":\"OK\",\"NewStateReason\":\"Threshold Crossed: 1 datapoint (7.9053535353535365) was not greater than or equal to the threshold (8.0).\",\"StateChangeTime\":\"2015-11-09T21:19:43.454+0000\",\"Region\":\"US - N. Virginia\",\"OldStateValue\":\"ALARM\",\"Trigger\":{\"MetricName\":\"CPUUtilization\",\"Namespace\":\"AWS/EC2\",\"Statistic\":\"AVERAGE\",\"Unit\":null,\"Dimensions\":[],\"Period\":300,\"EvaluationPeriods\":1,\"ComparisonOperator\":\"GreaterThanOrEqualToThreshold\",\"Threshold\":8.0}}",
+        "MessageAttributes": {
+          "Test": {
+            "Type": "String",
+            "Value": "TestString"
+          },
+          "TestBinary": {
+            "Type": "Binary",
+            "Value": "TestBinary"
+          }
+        },
+        "Type": "Notification",
+        "UnsubscribeUrl": "EXAMPLE",
+        "TopicArn": "arn:aws:sns:eu-west-1:000000000000:cloudwatch-alarms",
+        "Subject": "example subject"
+      }
+    }
+  ]
+}
