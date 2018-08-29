@@ -14,9 +14,6 @@ func Handler(snsEvent events.SNSEvent) {
 	slackMessageAttachments := slack.CreateSlackMessagAttachment(snsEvent)
 
 	slackHook := os.Getenv("SLACK_HOOK")
-	if slackHook == "" {
-		slackHook = "https://hooks.slack.com/services/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"
-	}
 	request := gorequest.New()
 	request.
 		Post(slackHook).
