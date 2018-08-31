@@ -1,5 +1,5 @@
 # AWS-Notify-Slack
-[![Build Status](https://travis-ci.org/telia-oss/aws-notify-slack.svg?branch=master)](https://travis-ci.org/telia-oss/aws-notify-slack)![](https://img.shields.io/maintenance/yes/2018.svg)
+[![Build Status](https://travis-ci.org/telia-oss/aws-notify-slack.svg?branch=master)](https://travis-ci.org/telia-oss/aws-notify-slack)! [](https://img.shields.io/maintenance/yes/2018.svg)
 
 A lambda function that format and forward a AWS cloudwatch event to slack
 
