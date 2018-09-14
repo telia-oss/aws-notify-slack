@@ -14,6 +14,9 @@ test:
 run:
 	sam local invoke NotifySlackFunction -e snsEvent.json
 
+deploy:
+	aws s3 cp bin/*.zip s3://telia-oss/aws-notify-slack/main.zip --acl "public-read"
+
 .PHONY: clean
 clean:
 	rm -rf ./bin ./vendor Gopkg.lock
