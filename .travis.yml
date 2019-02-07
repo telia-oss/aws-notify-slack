@@ -20,5 +20,8 @@ script:
 - make build
 - make zip
 deploy:
-  - make deploy
+  provider: script
+  script: make deploy
+  on:
+    branch: master
   
