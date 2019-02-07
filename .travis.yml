@@ -18,10 +18,17 @@ install:
 script:
 - make test
 - make build
-- make zip
 deploy:
-  provider: script
-  script: make deploy
-  on:
-    branch: master
+  - provider: script
+    script: make build
+    on:
+      branch: master
+  - provider: script
+    script: make zip
+    on:
+      branch: master
+  - provider: script
+    script: make deploy
+    on:
+      branch: master
   
