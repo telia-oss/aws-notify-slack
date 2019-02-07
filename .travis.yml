@@ -20,4 +20,5 @@ script:
 - make build
 - make zip
 deploy:
-- make deploy
+  - make deploy
+  
