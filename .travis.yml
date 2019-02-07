@@ -5,8 +5,8 @@ matrix:
   - os: linux 
     go: 1.10.x
     env:
-    - TARGET=
-    - ARCH=
+    - TARGET=linux
+    - ARCH=amd64
 notifications:
   email: false
 before_install:
@@ -19,4 +19,5 @@ script:
 - make test
 - make build
 - make zip
+deploy:
 - make deploy
