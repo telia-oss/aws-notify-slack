@@ -1,6 +1,7 @@
 package slack
 
 import (
+	"encoding/json"
 	"testing"
 	"time"
 
@@ -52,9 +53,13 @@ func TestCreateSlackMessagAttachment(t *testing.T) {
 		},
 	}
 
-	assert.Equal(t, "good", slackMessageAttachments.Color)
-	assert.Equal(t, "OK: sns-cloudwatch in US - N. Virginia", slackMessageAttachments.Pretext)
-	assert.Equal(t, "AWS-bot", slackMessageAttachments.Username)
-	assert.Equal(t, ":loudspeaker:", slackMessageAttachments.Icon)
-	assert.Equal(t, attachemntsFields, slackMessageAttachments.Fields)
+	var msg MessageAttachments
+
+	json.Unmarshal([]byte(slackMessageAttachments), &msg)
+
+	assert.Equal(t, "good", msg.Color)
+	assert.Equal(t, "OK: sns-cloudwatch in US - N. Virginia", msg.Pretext)
+	assert.Equal(t, "AWS-bot", msg.Username)
+	assert.Equal(t, ":loudspeaker:", msg.Icon)
+	assert.Equal(t, attachemntsFields, msg.Fields)
 }

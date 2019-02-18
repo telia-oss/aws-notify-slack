@@ -1,7 +1,9 @@
 package slack
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/Jeffail/gabs"
@@ -38,7 +40,8 @@ func mapColor(status string) string {
 }
 
 // CreateSlackMessagAttachment is a function to create slack message
-func CreateSlackMessagAttachment(snsEvent events.SNSEvent) MessageAttachments {
+func CreateSlackMessagAttachment(snsEvent events.SNSEvent) string {
+	log.Println("snsEvent", snsEvent)
 	records := snsEvent.Records
 	snsRecord := records[0].SNS
 
@@ -86,5 +89,10 @@ func CreateSlackMessagAttachment(snsEvent events.SNSEvent) MessageAttachments {
 		Fields:   slackAttachmentFields,
 	}
 
-	return slackMessageAttachments
+	resp, err := json.Marshal(slackMessageAttachments)
+	if err != nil {
+		log.Fatal("Error building Slack attachments", err)
+	}
+
+	return string(resp)
 }
