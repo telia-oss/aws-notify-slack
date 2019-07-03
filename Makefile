@@ -6,7 +6,7 @@ build:
 	env GOOS=$(TARGET) GOARCH=$(ARCH) go build -ldflags="-s -w" -o bin/main main.go
 
 zip:
-	zip -mj bin/main.zip bin/*
+	zip -j bin/main.zip bin/main
 
 test:
 	go test ./... --cover
