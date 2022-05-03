@@ -12,7 +12,7 @@ import (
 
 // Handler is our lambda handler invoked by the `lambda.Start` function call
 func Handler(snsEvent events.SNSEvent) {
-	slackMessageAttachments := slack.CreateSlackMessagAttachment(snsEvent)
+	slackMessageAttachments := slack.CreateSlackMessageAttachment(snsEvent)
 	log.Println("slackMessageAttachments: ", slackMessageAttachments)
 
 	slackHook := os.Getenv("SLACK_HOOK")
