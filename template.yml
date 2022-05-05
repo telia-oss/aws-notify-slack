@@ -7,3 +7,6 @@ Resources:
     Properties:
       Handler: bin/main
       Runtime: go1.x
+      Environment:
+        Variables:
+          SLACK_HOOK: https://hooks.slack.com/services/...

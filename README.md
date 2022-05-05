@@ -8,6 +8,7 @@ A lambda function that format and forward a AWS cloudwatch event to slack
 
 ## Supported event types
 - [x] CloudWatch
+- [x] ECS Task State Change
 - [ ] Autoscaling
 
 ## Run unit tests 
