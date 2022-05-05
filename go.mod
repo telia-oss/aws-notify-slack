@@ -1,6 +1,6 @@
 module github.com/telia-oss/aws-notify-slack
 
-go 1.16
+go 1.17
 
 require (
 	github.com/Jeffail/gabs v1.1.0

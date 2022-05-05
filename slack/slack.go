@@ -26,25 +26,13 @@ type MessageAttachments struct {
 	Fields   []slackAttachmentField `json:"fields,omitempty"`
 }
 
-func mapAlarmColor(status string) string {
+func mapColor(status string) string {
 	var colorCode string
 	switch status {
-	case "ALARM":
+	case "STOPPED", "ALARM":
 		colorCode = "danger"
 	case "INSUFFICIENT_DATA":
 		colorCode = "warning"
-	default:
-		colorCode = "good"
-	}
-
-	return colorCode
-}
-
-func mapEcsTaskChangeColor(desiredStatus string) string {
-	var colorCode string
-	switch desiredStatus {
-	case "STOPPED":
-		colorCode = "danger"
 	default:
 		colorCode = "good"
 	}
@@ -119,7 +107,7 @@ func ecsTaskStateChange(message *gabs.Container) string {
 	}
 
 	slackMessageAttachments := MessageAttachments{
-		Color:    mapEcsTaskChangeColor(desiredStatus),
+		Color:    mapColor(desiredStatus),
 		Pretext:  pretext,
 		Username: username,
 		Icon:     icon,
@@ -171,7 +159,7 @@ func alarm(message *gabs.Container) string {
 	}
 
 	slackMessageAttachments := MessageAttachments{
-		Color:    mapAlarmColor(NewStateValue),
+		Color:    mapColor(NewStateValue),
 		Pretext:  pretext,
 		Username: username,
 		Icon:     icon,
